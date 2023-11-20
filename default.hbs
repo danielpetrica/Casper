@@ -28,7 +28,7 @@
     <header id="gh-head" class="gh-head outer{{#match @custom.header_style "Hidden"}} is-header-hidden{{/match}}">
         <div class="gh-head-inner inner">
             <div class="gh-head-brand">
-                <a class="gh-head-logo{{#unless @site.logo}} no-image{{/unless}}" href="{{@site.url}}">
+                <a class="gh-head-logo{{#unless @site.logo}} no-image{{/unless}}" href="{{@site.url}}" data-umami-event="{click-home-in-header}">
                     {{#if @site.logo}}
                         <img src="{{@site.logo}}" alt="{{@site.title}}">
                     {{else}}
@@ -43,7 +43,7 @@
                 {{navigation}}
                 {{#unless @site.members_enabled}}
                     {{#match @custom.navigation_layout "Stacked"}}
-                        <button class="gh-search gh-icon-btn" aria-label="Search this site" data-ghost-search>{{> "icons/search"}}</button>
+                        <button class="gh-search gh-icon-btn" aria-label="Search this site" data-ghost-search data-umami-event="{click-search-in-header}">{{> "icons/search"}}</button>
                     {{/match}}
                 {{/unless}}
             </nav>
@@ -51,20 +51,20 @@
             <div class="gh-head-actions">
                 {{#unless @site.members_enabled}}
                     {{^match @custom.navigation_layout "Stacked"}}
-                        <button class="gh-search gh-icon-btn" data-ghost-search>{{> "icons/search"}}</button>
+                        <button class="gh-search gh-icon-btn" data-ghost-searchdata-umami-event="{click-search-in-header}">{{> "icons/search"}}</button>
                     {{/match}}
                 {{else}}
-                    <button class="gh-search gh-icon-btn" data-ghost-search>{{> "icons/search"}}</button>
+                    <button class="gh-search gh-icon-btn" data-ghost-search data-umami-event="{click-search-in-header}">{{> "icons/search"}}</button>
                     <div class="gh-head-members">
                         {{#unless @member}}
                             {{#unless @site.members_invite_only}}
-                                <a class="gh-head-link" href="#/portal/signin" data-portal="signin">Sign in</a>
-                                <a class="gh-head-button" href="#/portal/signup" data-portal="signup">Subscribe</a>
+                                <a class="gh-head-link" href="#/portal/signin" data-portal="signin" data-umami-event="{click-login-in-header}">Sign in</a>
+                                <a class="gh-head-button" href="#/portal/signup" data-portal="signup" data-umami-event="{click-logout-in-header}">Subscribe</a>
                             {{else}}
-                                <a class="gh-head-button" href="#/portal/signin" data-portal="signin">Sign in</a>
+                                <a class="gh-head-button" href="#/portal/signin" data-portal="signin" data-umami-event="{click-login-in-header}">Sign in</a>
                             {{/unless}}
                         {{else}}
-                            <a class="gh-head-button" href="#/portal/account" data-portal="account">Account</a>
+                            <a class="gh-head-button" href="#/portal/account" data-portal="account" data-umami-event="{click-account-in-header}">Account</a>
                         {{/unless}}
                     </div>
                 {{/unless}}
@@ -80,11 +80,11 @@
     {{!-- The global footer at the very bottom of the screen --}}
     <footer class="site-footer outer">
         <div class="inner">
-            <section class="copyright"><a href="{{@site.url}}">{{@site.title}}</a> &copy; {{date format="YYYY"}}</section>
+            <section class="copyright"><a href="{{@site.url}}" data-umami-event="{click-copiright-in-footer}">{{@site.title}}</a> &copy; {{date format="YYYY"}}</section>
             <nav class="site-footer-nav">
                 {{navigation type="secondary"}}
             </nav>
-            <div class="gh-powered-by"><a href="https://ghost.org/" target="_blank" rel="noopener">Powered by Ghost</a></div>
+            <div class="gh-powered-by" data-umami-event="{click-ghoslink-in-footer}"><a href="https://ghost.org/" target="_blank" rel="noopener">Powered by Ghost</a></div>
         </div>
     </footer>
 

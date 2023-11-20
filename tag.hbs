@@ -9,7 +9,7 @@
         <section class="post-card post-card-large">
 
             {{#if feature_image}}
-            <div class="post-card-image-link">
+            <div class="post-card-image-link" data-umami-event="{click-post-in-feed}" data-umami-event-post="{name}">
                 {{!-- This is a responsive image, it loads different sizes depending on device
                 https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
                 <img class="post-card-image"
@@ -27,9 +27,9 @@
             <div class="post-card-content">
             <div class="post-card-content-link">
                 <header class="post-card-header">
-                    <h2 class="post-card-title">{{name}}</h2>
+                    <h2 class="post-card-title" data-umami-event="{click-post-in-feed}" data-umami-event-post="{name}">{{name}}</h2>
                 </header>
-                <div class="post-card-excerpt">
+                <div class="post-card-excerpt" data-umami-event="{click-post-in-feed}" data-umami-event-post="{name}">
                     {{#if description}}
                         {{description}}
                     {{else}}
