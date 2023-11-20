@@ -15,7 +15,7 @@ into the {body} tag of the default.hbs template --}}
         <div class="article-tag post-card-tags">
             {{#primary_tag}}
                 <span class="post-card-primary-tag">
-                    <a href="{{url}}" data-umami-event="{click-tag-in-post}" data-umami-event-tag="{name}">{{name}}</a>
+                    <a href="{{url}}" data-umami-event="click-tag-in-post" data-umami-event-tag="{{name}}">{{name}}</a>
                 </span>
             {{/primary_tag}}
             {{#if featured}}
@@ -36,18 +36,18 @@ into the {body} tag of the default.hbs template --}}
                 {{#foreach authors}}
                 <li class="author-list-item">
                     {{#if profile_image}}
-                    <a href="{{url}}" class="author-avatar" data-umami-event="{click-author-in-post}" data-umami-event-author="{name}">
+                    <a href="{{url}}" class="author-avatar" data-umami-event="click-author-in-post" data-umami-event-author="{{name}}">
                         <img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
                     </a>
                     {{else}}
-                    <a href="{{url}}" class="author-avatar author-profile-image" data-umami-event="{click-authourimg-in-post}" data-umami-event-author="{name}">{{> "icons/avatar"}}</a>
+                    <a href="{{url}}" class="author-avatar author-profile-image" data-umami-event="click-authourimg-in-post" data-umami-event-author="{{name}}">{{> "icons/avatar"}}</a>
                     {{/if}}
                 </li>
                 {{/foreach}}
             </ul>
 
             <div class="article-byline-meta">
-                <h4 class="author-name" data-umami-event="{click-author-in-post}" data-umami-event-author="{name}">{{authors}}</h4>
+                <h4 class="author-name" data-umami-event="click-author-in-post" data-umami-event-author="{{authors}}">{{authors}}</h4>
                 <div class="byline-meta-content">
                     <time class="byline-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time>
                     {{#if reading_time}}
